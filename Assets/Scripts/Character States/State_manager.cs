@@ -5,19 +5,10 @@ using UnityEngine;
 public class State_manager : MonoBehaviour
 
 {
-    State currentState;
-    Inactive_idle inactiveIdle = new Inactive_idle();
-    Active_combat activeCombat = new Active_combat();
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentState = inactiveIdle;
-        currentState.EnterState(this);
-    }
+    public State currentState;
 
-    // Update is called once per frame
-    void Update()
+    public void Set(State state)
     {
-        
+        currentState = state;
     }
 }

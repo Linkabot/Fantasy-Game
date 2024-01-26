@@ -2,9 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class State 
+public abstract class State : MonoBehaviour
 {
-    public abstract void EnterState(State_manager character);
+    protected Character core;
+    public float startTime;
+    public bool complete;
+    public bool complettionTime;
 
-    public abstract void UpdateState(State_manager character);
+    private void Awake()
+    {
+        core = transform.root.GetComponent<Character>();
+    }
+
+    public virtual void Enter()
+    {
+
+    }
+
+    public virtual void Execute()
+    {
+
+    }
 }
